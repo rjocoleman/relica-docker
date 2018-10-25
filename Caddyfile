@@ -1,0 +1,5 @@
+*:1301
+basicauth / {%WEB_USERNAME%} {%WEB_PASSWORD%}
+proxy / localhost:1201 {
+	header_upstream Origin localhost:1201
+}

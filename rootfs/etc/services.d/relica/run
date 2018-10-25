@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+
+with-contenv
+# s6-setuidgid daemon
+
+relica -config /opt/relica/config.toml -log stdout daemon
