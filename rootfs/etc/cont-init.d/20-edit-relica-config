@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+
+## The newest version of Relica is downloaded every time this container is restarted so we don't need nor want automatic updates
+sed -i '/^upgrade_policy = /{h;s/ = .*/ = "disabled"/};${x;/^$/{s//upgrade_policy = "disabled"/;H};x}' /opt/relica/config.toml
+
+# $HOME is used as the location of the cache and config
+# but these undocumented config variables change it
+# sed -i '/^storage_dir = /{h;s/ = .*/ = "\/config\/\.relica"/};${x;/^$/{s//storage_dir = "\/config\/\.relica"/;H};x}' /opt/relica/config.toml
+# sed -i '/^restic_cache_dir = /{h;s/ = .*/ = "\/config\/\.relica"/};${x;/^$/{s//restic_cache_dir = "\/config\/\.relica"/;H};x}' /opt/relica/config.toml

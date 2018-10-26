@@ -1,0 +1,5 @@
+#!/usr/bin/execlineb -P
+
+## Relica installer from https://relica.run requires sudo. Cleaning up our workaround wrapper
+
+rm /bin/sudo

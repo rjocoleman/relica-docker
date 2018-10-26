@@ -1,0 +1,41 @@
+#!/usr/bin/with-contenv bash
+
+echo '
+-------------------------------------
+            Unofficial
+   Relica Backup Docker Container
+-------------------------------------
+
+Official Site:
+relicabackup.com
+
+Docker Container:
+github.com/rjocoleman/docker-relica
+
+-------------------------------------
+
+The latest version of Relica is
+downloaded on each restart, so to
+update just restart!
+
+-------------------------------------
+
+Make sure you specify:
+Volumes:
+/backup - backup storage
+/config - Relica config and cache
+
+Environment variables:
+RUID - User ID
+RGID - Group ID
+
+Optional Env:
+WEB_USERNAME
+WEB_PASSWORD
+LISTEN_ADDRESS
+
+Relica will be available at:
+http://<ip>:1301
+http://localhost:1201
+
+-------------------------------------'

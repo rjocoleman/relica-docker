@@ -1,0 +1,17 @@
+#!/usr/bin/with-contenv bash
+
+RUID=${RUID:-911}
+RGID=${RGID:-911}
+
+groupmod -o -g "$RGID" relicabackup
+usermod -o -u "$RUID" relicabackup
+
+echo "
+-------------------------------------
+User uid:    $(id -u relicabackup)
+User gid:    $(id -g relicabackup)
+-------------------------------------
+"
+
+chown relicabackup: -R /config
+chown relicabackup: -R /backup

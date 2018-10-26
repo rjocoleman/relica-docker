@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+gomplate < /etc/Caddyfile.tmpl > /etc/Caddyfile
+caddy -conf /etc/Caddyfile -validate
+
+echo "
+-------------------------------------
+Listen Address:  ${LISTEN_ADDRESS:-<< all >>}
+Web Username:    ${WEB_USERNAME:-<< none >>}
+Web Password:    ${WEB_PASSWORD:-<< none >>}
+-------------------------------------
+"

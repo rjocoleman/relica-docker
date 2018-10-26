@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" == "install" ]; then
+  echo "install is not supported on this platform. Skipping without error.."
+  exit 0
+fi
+
+# $HOME is used as the location of the cache and config with no documented way to configure
+export HOME=/config
+/opt/relica/bin/relica "$@"

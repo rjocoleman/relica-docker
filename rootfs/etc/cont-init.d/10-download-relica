@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+curl https://relica.run | bash
+
+## FYI: the above script (currently) relies on sudo, and systemd. neither of which we have so we have wrappers to deal with it

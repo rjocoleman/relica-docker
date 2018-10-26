@@ -1,0 +1,9 @@
+{{ getenv "LISTEN_ADDRESS" "*" }}:1301
+
+{{ if getenv "WEB_USERNAME" }}
+basicauth / {{ getenv "WEB_USERNAME" }} {{ getenv "WEB_PASSWORD" }}
+{{end}}
+
+proxy / localhost:1201 {
+	header_upstream Origin localhost:1201
+}
