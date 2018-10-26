@@ -16,7 +16,7 @@ RUN apk add --no-cache curl ca-certificates shadow gnupg bash gomplate \
 
 COPY rootfs /
 
-EXPOSE 1201/tcp 1301/tcp
+EXPOSE 1201/tcp 1301/tcp 4334/tcp
 VOLUME /backup /config
 
 ENTRYPOINT ["/init"]
